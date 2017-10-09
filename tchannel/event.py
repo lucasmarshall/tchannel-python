@@ -36,7 +36,7 @@ EventType = enum(
     'EventType',
     before_send_request=0x00,
     after_send_request=0x01,
-    before_send_request_headers=0x02,
+    before_serialize_request_headers=0x02,
     before_send_response=0x10,
     after_send_response=0x11,
     before_receive_request=0x20,
@@ -63,7 +63,7 @@ class EventHook(object):
 
     """
 
-    def before_send_request_headers(self, headers):
+    def before_serialize_request_headers(self, headers):
         """Called before an outgoing request is serialized.
         Only to be used for modifying application headers.
         """
